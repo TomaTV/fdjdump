@@ -1,0 +1,19 @@
+{
+  "name": "fdjdump",
+  "version": "1.0.0",
+  "description": "FDJDump - FT3",
+  "keywords": [
+    "fdj"
+  ],
+  "license": "ISC",
+  "author": "Toma",
+  "type": "commonjs",
+  "main": "chatbot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "limdu": "^1.0.0",
+    "mysql": "^2.18.1"
+  }
+}
