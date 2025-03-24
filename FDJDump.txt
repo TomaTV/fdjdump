@@ -1,0 +1,52 @@
+TABLE FDJDump :
+
+- Banque (offre)
+(offer_id, offer, offer_details, offer_price)
+- Transaction
+(withdraw_money, iban, id, id_transaction, deposit_money, money)
+- Compte bancaire personnel (users)
+(first_name, last_name, iban, id, money)
+- Historique
+(id, id_users, first_name, last_name, id_transaction, withdraw/deposit_money, after/before_money, money)
+
+
+Argent retiré (withdraw_money), Prénom (first_name), Nom (last_name), IBAN (iban), ID (id), ID Transaction (id_transaction), Argent déposé (deposit_money), Argent (money)
+Offre ID (offer_id), Offre Détails (offer_details), Prix (offer_price)
+
+
+
+Installer knex --> remplacer par MySQL
+Limdu --> pour la prédiction du chatbot
+
+
+Trouver les chemins possible pour le chatbot (chaque input et output)
+
+Membre de la banque ? (oui)
+
+Voici un tableau géant intégrant toutes les étapes et les flux en un seul fichier de gestion centralisée :
+Étape	Chemin	Détails	Statut
+Étape 1 : Projet opérationnel	-	Mise en place de Node.js et environnement de développement	✅ Fait
+Étape 2 : Création des CRUD et Tables	Offres	CRUD : Création, lecture, mise à jour, suppression	✅ Fait
+	Clients	CRUD pour la gestion des utilisateurs	✅ Fait
+	Mouvements	CRUD pour les transactions bancaires (dépôt, retrait)	✅ Fait
+	Transactions	CRUD pour les virements et paiements	✅ Fait
+	Cartes	CRUD pour lier et gérer les cartes bancaires	✅ Fait
+Étape 3 : Session utilisateur (Flow 1)	Vous êtes un membre ?	Choix : Oui / Non	🔄 À faire
+	Non (Création de compte)	Saisie : first_name, last_name, email → Enregistrement en DB → Association d’une offre	🔄 À faire
+	Oui (Connexion)	Vérification de l’email en DB	🔄 À faire
+	→ Existe	Création session utilisateur (Id, Email, FirstName, LastName, OffreID)	🔄 À faire
+	→ N’existe pas	Message d’erreur "Utilisateur introuvable"	🔄 À faire
+Étape 4 : Proposition d’action (Flow 2)	Virement bancaire	Lancement du processus de virement	🔄 À faire
+	Afficher solde et historique	Requête DB pour récupérer et afficher le solde et transactions	🔄 À faire
+	Changer d’offre	Affichage des offres disponibles + mise à jour en DB	🔄 À faire
+	Afficher les cartes	Liste des cartes associées à l’utilisateur	🔄 À faire
+	Ajouter une carte	Formulaire d’ajout → Enregistrement en DB	🔄 À faire
+	Modifier son compte	Modification des infos utilisateur (nom, email, etc.)	🔄 À faire
+Étape 5 : Gestion des virements bancaires (Inclus dans le même fichier)	Demande IBAN	L’utilisateur saisit un IBAN	🔄 À faire
+	Vérification IBAN	Format correct + Vérification si existant en DB	🔄 À faire
+	Demande Montant	Saisie du montant	🔄 À faire
+	Vérification solde	Vérification du solde utilisateur avant validation	🔄 À faire
+	Demande Libellé	Saisie du libellé de la transaction	🔄 À faire
+	Confirmation utilisateur	Récapitulatif et validation finale	🔄 À faire
+	Enregistrement DB	Création de la transaction en base et mise à jour du solde	🔄 À faire
+	Envoi de notification	Email / SMS pour confirmer l’opération	🔄 À faire
