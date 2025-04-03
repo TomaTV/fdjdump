@@ -50,3 +50,6 @@ Voici un tableau géant intégrant toutes les étapes et les flux en un seul fic
 	Confirmation utilisateur	Récapitulatif et validation finale	🔄 À faire
 	Enregistrement DB	Création de la transaction en base et mise à jour du solde	🔄 À faire
 	Envoi de notification	Email / SMS pour confirmer l’opération	🔄 À faire
+
+
+mettre iban relier à la card et quand on créer un compte, créer un iban automatiquement et une carte si y faut
