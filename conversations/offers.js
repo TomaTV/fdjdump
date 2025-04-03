@@ -36,12 +36,6 @@ function handleListOffers(rl, userSession, callback) {
   });
 }
 
-/**
- * Affiche les détails d'une offre spécifique
- * @param {Object} rl - Interface readline
- * @param {number} offerId - ID de l'offre à consulter
- * @param {Function} callback - Fonction de rappel
- */
 function handleOfferDetails(rl, offerId, callback) {
   getOfferDetails(offerId, (err, offerDetails) => {
     if (err) {
